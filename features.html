@@ -10,25 +10,49 @@
 </head>
 </head>
 <body>
-    <!-- Navbar -->
-<nav>
-    <div class="logo">
-    <img src="logo.png.png" alt="Prayer Mat Logo">
-  </div>
-  <a href="index.html">Home</a>
-  <a href="products.html">Products</a>
-  <a href="features.html">Features</a>
-  <a href="gallery.html">Gallery</a>
-  <a href="contact.html">Contact</a>
-  <!-- Search Box -->
-   <div>
-  <form class="search-form">
-    <input type="text" placeholder="Search...">
-    <button type="submit">Go</button>
-    </div>
-  </form>
-</nav>
+  <!-- Navbar -->
+<nav class="nav-bar" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html"><img src="logo.png.png" alt="Logo"></a>
 
+    <div class="nav-center">
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+
+        <li class="nav-dropdown">
+          <button class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Products ▾</button>
+          <ul class="dropdown-menu" role="menu" aria-label="Products submenu">
+            <li><a href="products.html#turkish-velvet">Turkish Velvet Prayer Mats</a></li>
+            <li><a href="products.html#couple">Couple</a></li>
+            <li><a href="products.html#hadiya-bundle">Hadiya Bundle</a></li>
+            <li><a href="products.html#customize-shawl">Customize Shawl</a></li>
+            <li><a href="products.html#tasbeeh">Tasbeeh</a></li>
+            <li><a href="products.html#gift-set">Gift Set</a></li>
+          </ul>
+        </li>
+
+        <li><a href="features.html">Features</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="nav-actions">
+      <button id="search-toggle" class="icon-btn" aria-label="Open search">🔍</button>
+      <a href="#" id="cart-btn" class="cart-link" aria-label="Open cart">🛒 <span id="cart-count">0</span></a>
+      <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-label="Toggle menu">
+        <span class="hamburger" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="nav-search" id="nav-search" aria-hidden="true">
+    <form class="search-form" role="search" onsubmit="return false;">
+      <input type="search" placeholder="Search products..." aria-label="Search products">
+      <button type="button" id="search-close" aria-label="Close search">✕</button>
+    </form>
+  </div>
+</nav>
 <!-- Footer -->
 <footer>
   <p>Free Delivery on Order Above 5000/-PKR</p>
@@ -150,7 +174,7 @@
   </div>
 </footer>
 
-
+<script src="js/main.js"></script>
 
 </body>
 </html>

@@ -7,22 +7,48 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav>
-    <div class="logo">
-    <img src="logo.png.png" alt="Prayer Mat Logo">
-  </div>
-  <a href="index.html">Home</a>
-  <a href="products.html">Products</a>
-  <a href="features.html">Features</a>
-  <a href="gallery.html">Gallery</a>
-  <a href="contact.html">Contact</a>
-  <!-- Search Box -->
-   <div>
-  <form class="search-form">
-    <input type="text" placeholder="Search...">
-    <button type="submit">Go</button>
+    <!-- Navbar -->
+<nav class="nav-bar" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html"><img src="logo.png.png" alt="Logo"></a>
+
+    <div class="nav-center">
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+
+        <li class="nav-dropdown">
+          <button class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Products ▾</button>
+          <ul class="dropdown-menu" role="menu" aria-label="Products submenu">
+            <li><a href="products.html#turkish-velvet">Turkish Velvet Prayer Mats</a></li>
+            <li><a href="products.html#couple">Couple</a></li>
+            <li><a href="products.html#hadiya-bundle">Hadiya Bundle</a></li>
+            <li><a href="products.html#customize-shawl">Customize Shawl</a></li>
+            <li><a href="products.html#tasbeeh">Tasbeeh</a></li>
+            <li><a href="products.html#gift-set">Gift Set</a></li>
+          </ul>
+        </li>
+
+        <li><a href="features.html">Features</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
     </div>
-  </form>
+
+    <div class="nav-actions">
+      <button id="search-toggle" class="icon-btn" aria-label="Open search">🔍</button>
+      <a href="#" id="cart-btn" class="cart-link" aria-label="Open cart">🛒 <span id="cart-count">0</span></a>
+      <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-label="Toggle menu">
+        <span class="hamburger" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="nav-search" id="nav-search" aria-hidden="true">
+    <form class="search-form" role="search" onsubmit="return false;">
+      <input type="search" placeholder="Search products..." aria-label="Search products">
+      <button type="button" id="search-close" aria-label="Close search">✕</button>
+    </form>
+  </div>
 </nav>
 
 <!-- Product Section -->
@@ -43,7 +69,7 @@
       <p class="product-description">
        Divine Gift Set – A Complete Spiritual Companion”
 Elevate the spirit of your loved ones with this thoughtfully curated gift set. It includes:
-Quran – Perfectly bound for easy reading and daily inspiration.
+Quran cover – Elegant and protective, designed to keep the holy book safe.
 Tasbeeh – Beautifully crafted to accompany your prayers and remembrance of Allah.
 Janamaz (Prayer Mat) – Soft, comfortable, and designed for devotion at home or on the go.
 Ideal for special occasions, religious celebrations, or personal reflection, this set combines elegance, utility, and spiritual significance in one thoughtful package.
@@ -52,22 +78,31 @@ Ideal for special occasions, religious celebrations, or personal reflection, thi
       <!-- Color Options -->
       <div class="color-options">
         <p>Select Color:</p>
-        <span class="color-swatch" style="background-color:#000000;"></span>
-        <span class="color-swatch" style="background-color:#ffffff;"></span>
-        <span class="color-swatch" style="background-color:#ad986d;"></span>
+        <span class="color-swatch" style="background-color:#1a0d33;" title="Purple"></span>
+        <span class="color-swatch" style="background-color:#f08edb;" title="Pink"></span>
+        <span class="color-swatch" style="background-color:#000000;" title="Black"></span>
+        <span class="color-swatch" style="background-color:#101240;" title="Blue"></span>
+        <span class="color-swatch" style="background-color:#eceae5;" title="Off White"></span>
+        <span class="color-swatch" style="background-color:#092b08;" title="Green"></span>
+
       </div>
 
       <!-- name input -->
-        <form class="customize-form">
-  <label for="custom-name">Enter Your Name:</label>
-  <input type="text" id="custom-name" name="custom-name" placeholder="Type your name here">
-</form>
+      <form class="customize-form" onsubmit="return false;">
+        <label for="custom-name">Enter Your Name:</label>
+        <input type="text" id="custom-name" name="custom-name" placeholder="Type your name here" />
+      </form>
 
       <!-- Buttons -->
-       <div>
-      <a href="contact.html" class="shop-btn">Add to cart</a>
+      <div class="product-actions">
+        <button class="btn btn-add-to-cart" data-id="10">Add to Cart</button>
+        <button class="shop-btn" onclick="window.location.href='contact.html'">
+  Order Now
+</button>
+
       </div>
-    </div>
+    </aside>
+  </main>
   </div>
 
 </body>

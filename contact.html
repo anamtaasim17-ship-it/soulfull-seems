@@ -8,22 +8,56 @@
 </head>
 <body>
     <!-- Navbar -->
-<nav>
-    <div class="logo">
-    <img src="logo.png.png" alt="Prayer Mat Logo">
-  </div>
-  <a href="index.html">Home</a>
-  <a href="products.html">Products</a>
-  <a href="features.html">Features</a>
-  <a href="gallery.html">Gallery</a>
-  <a href="contact.html">Contact</a>
-  <!-- Search Box -->
-   <div>
-  <form class="search-form">
-    <input type="text" placeholder="Search...">
-    <button type="submit">Go</button>
+<nav class="nav-bar" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html"><img src="logo.png.png" alt="Logo"></a>
+
+    <div class="nav-center">
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+
+        <li class="nav-dropdown">
+          <button class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Products ▾</button>
+          <ul class="dropdown-menu" role="menu" aria-label="Products submenu">
+            <li><a href="products.html#turkish-velvet">Turkish Velvet Prayer Mats</a></li>
+            <li><a href="products.html#couple">Couple</a></li>
+            <li><a href="products.html#hadiya-bundle">Hadiya Bundle</a></li>
+            <li><a href="products.html#customize-shawl">Customize Shawl</a></li>
+            <li><a href="products.html#tasbeeh">Tasbeeh</a></li>
+            <li><a href="products.html#gift-set">Gift Set</a></li>
+          </ul>
+        </li>
+
+        <li><a href="features.html">Features</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
     </div>
-  </form>
+
+    <div class="nav-actions">
+      <button id="search-toggle" class="icon-btn" aria-label="Open search">🔍</button>
+      <a href="#" id="cart-btn" class="cart-link" aria-label="Open cart">🛒 <span id="cart-count">0</span></a>
+      <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-label="Toggle menu">
+        <span class="hamburger" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="nav-search" id="nav-search" aria-hidden="true">
+    <form class="search-form" role="search" onsubmit="return false;">
+      <input type="search" placeholder="Search products..." aria-label="Search products">
+      <button type="button" id="search-close" aria-label="Close search">✕</button>
+    </form>
+  </div>
+</nav>
+  <!-- Mini Cart Dropdown -->
+  <div id="mini-cart" class="hidden">
+    <h4>Your Cart</h4>
+    <ul id="cart-items"></ul>
+    <p id="cart-total">Total: $0</p>
+    <button id="checkout-btn">Checkout</button>
+  </div>
+</li>
 </nav>
 
 <!-- Footer -->
@@ -34,18 +68,45 @@
 
   <!-- Contact Section -->
   <section class="contact">
-    <h2 class="contact-title">Get in Touch</h2>
+    <h2 class="contact-title">Place Your Order</h2>
     <p class="contact-intro">We’d love to hear from you. Fill out the form or reach us directly.</p>
 
     <div class="contact-container">
       
-      <!-- Contact Form -->
-      <form class="contact-form">
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
-        <textarea placeholder="Your Message" rows="5" required></textarea>
-        <button type="submit" class="shop-btn">Send Message</button>
-      </form>
+      <!-- ORDER FORM MODAL (paste before </body>) -->
+<div id="order-modal" class="order-modal" aria-hidden="false" role="dialog" aria-modal="true">
+  <div class="order-modal-backdrop" data-close></div>
+  <div class="order-modal-panel" role="document">
+    <button class="order-close" aria-label="Close order form" data-close></button>
+  
+
+    <form id="order-form" autocomplete="off">
+      <label for="productName">Product Name *</label>
+      <input id="productName" name="productName" type="text" required>
+
+      <label for="customDetails">Customization Details</label>
+      <input id="customDetails" name="customDetails" type="text" placeholder="e.g. Name in urdu">
+
+      <label for="color">Color</label>
+      <input id="color" name="color" type="text" placeholder="Preferred color">
+
+      <label for="deliveryName">Delivery Name *</label>
+      <input id="deliveryName" name="deliveryName" type="text" required>
+
+      <label for="address">Address *</label>
+      <textarea id="address" name="address" rows="3" required></textarea>
+
+      <label for="contact">Contact Number *</label>
+      <input id="contact" name="contact" type="tel" placeholder="03XXXXXXXXX" required>
+
+      <div class="order-actions">
+        <button type="button" class="btn btn-outline" data-close>Cancel</button>
+        <button id="placeOrderBtn" type="button" class="shop-btn">Place Order</button>
+      </div>
+    </form>
+  </div>
+</div>
+
 
       <!-- Contact Info -->
       <div class="contact-info">
@@ -63,7 +124,7 @@
 
     </div>
   </section>
-
+<script src="js/main.js"></script>
 
 </body>
 </html>
